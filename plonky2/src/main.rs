@@ -6,7 +6,7 @@ use plonky2::plonk::circuit_builder::CircuitBuilder;
 use plonky2::plonk::circuit_data::CircuitConfig;
 use plonky2::plonk::config::{ GenericConfig, PoseidonGoldilocksConfig };
 use plonky2::plonk::circuit_data::CircuitData;
-use plonky2::field::goldilocks_field::GoldilocksField;
+use plonky2::field::goldilocks_field::GoldilocksField; // 2^64 - 2^32 + 1
 
 const D: usize = 2;
 type C = PoseidonGoldilocksConfig;
@@ -50,3 +50,6 @@ fn main() -> Result<()> {
 
     prover.verify(proof)
 }
+
+
+// C -> proof -- (c,v) --> p
